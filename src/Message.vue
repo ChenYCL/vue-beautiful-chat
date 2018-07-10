@@ -1,11 +1,11 @@
 <template>
-  <div class="sc-message">
+  <div class="sc-message" >
     <div class="sc-message--content" :class="{sent: message.author === 'me', received: message.author !== 'me'}">
       <div class="sc-message--avatar" :style="{
         backgroundImage: `url(${chatImageUrl})`
-      }"></div><TextMessage v-if="message.type === 'text'" :data="message.data" />
-      <EmojiMessage v-else-if="message.type === 'emoji'" :data="message.data" />
-      <FileMessage v-else-if="message.type === 'file'" :data="message.data" />
+      }"></div><TextMessage :style="style" v-if="message.type === 'text'" :data="message.data" />
+      <EmojiMessage :style="style" v-else-if="message.type === 'emoji'" :data="message.data" />
+      <FileMessage  :style="style" v-else-if="message.type === 'file'" :data="message.data" />
     </div>
   </div>
 </template>
@@ -35,6 +35,15 @@ export default {
     chatImageUrl: {
       type: String,
       default: chatIcon
+    },
+    mainColor: {
+      type: String,
+      default: 'blue'
+    }
+  },
+  computed: {
+    style() {
+      return 'background-color: ' + this.mainColor;
     }
   }
 }
@@ -96,14 +105,13 @@ export default {
 }
 .sc-message--content.sent .sc-message--text {
   color: white;
-  background-color: #4e8cff;
   max-width: calc(100% - 120px);
   word-wrap: break-word;
 }
 
 .sc-message--content.received .sc-message--text {
   color: #263238;
-  background-color: #f4f7f9;
+  background-color: #f4f7f9!important;
   margin-right: 40px;
 }
 </style>

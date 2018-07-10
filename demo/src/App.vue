@@ -10,6 +10,8 @@
       :close="closeChat"
       :open="openChat"
       :showEmoji="true"
+      placeholder="Manda un messaggio"
+      mainColor="#45f442"
       :showFile="true" />
       <p class="text-center"><a href="#" @click.prevent="openChat()">Open the chat window</a></p>
     <TestArea :onMessage="handleMessageFromTextArea" />
@@ -32,7 +34,7 @@ export default {
     return {
       agentProfile: {
         teamName: 'Vue Beautiful Chat',
-        imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
+        imageUrl: null
       },
       messageList: messageHistory,
       newMessagesCount: 0,

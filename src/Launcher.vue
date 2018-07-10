@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="sc-launcher" :class="{opened: isOpen}" @click.prevent="isOpen ? close() : open()">
+    <div class="sc-launcher" :style="style" :class="{opened: isOpen}" @click.prevent="isOpen ? close() : open()">
       <div v-if="newMessagesCount > 0 && !isOpen" class="sc-new-messsages-count">
         {{newMessagesCount}}
       </div>
@@ -16,6 +16,7 @@
       :showEmoji="showEmoji"
       :showFile="showFile"
       :placeholder="placeholder"
+      :mainColor="mainColor"
     />
   </div>
 </template>
@@ -63,12 +64,21 @@ export default {
     placeholder: {
       type: String,
       default: "Write a reply"
+    },
+    mainColor: {
+      type: String,
+      default: "blue"
     }
   },
   data () {
     return {
 
     }
+  },
+  computed: {
+      style () {
+        return 'background-color: ' + this.mainColor;
+      }
   },
   components: {
     ChatWindow
@@ -79,7 +89,6 @@ export default {
 .sc-launcher {
   width: 60px;
   height: 60px;
-  background-color: #4e8cff;
   background-position: center;
   background-repeat: no-repeat;
   position: fixed;

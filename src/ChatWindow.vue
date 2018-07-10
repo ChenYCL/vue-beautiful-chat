@@ -4,11 +4,13 @@
       :teamName="agentProfile.teamName"
       :imageUrl="agentProfile.imageUrl"
       :onClose="onClose"
+      :mainColor="mainColor"
     />
     <MessageList
       :messages="messageList"
       :imageUrl="agentProfile.imageUrl"
       :chatImageUrl="agentProfile.imageUrl"
+      :mainColor="mainColor"
     />
     <UserInput :showEmoji="showEmoji" :onSubmit="onUserInputSubmit" :showFile="showFile" :placeholder="placeholder"/>
   </div>
@@ -57,6 +59,10 @@ export default {
     placeholder: {
       type: String,
       default: "Write a reply"
+    },
+    mainColor: {
+      type: String,
+      default: "blue"
     }
   },
   data () {

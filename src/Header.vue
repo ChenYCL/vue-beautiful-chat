@@ -1,6 +1,6 @@
 <template>
-  <div class="sc-header">
-    <img class="sc-header--img" :src="imageUrl" alt="" />
+  <div class="sc-header" :style="style">
+    <img class="sc-header--img" v-if="imageUrl" :src="imageUrl" alt="" />
     <div class="sc-header--team-name"> {{teamName}} </div>
     <div class="sc-header--close-button" @click="onClose">
       <img src="./assets/close-icon.png" alt="" />
@@ -12,7 +12,6 @@ export default {
   props: {
     imageUrl: {
       type: String,
-      required: true
     },
     teamName: {
       type: String
@@ -20,13 +19,20 @@ export default {
     onClose: {
       type: Function,
       required: true
+    },
+    mainColor: {
+      type: String,
+    }
+  },
+  computed: {
+    style () {
+      return 'background-color: ' + this.mainColor;
     }
   }
 }
 </script>
 <style scoped>
 .sc-header {
-  background: #4e8cff;
   min-height: 75px;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
@@ -42,6 +48,8 @@ export default {
   border-radius: 50%;
   align-self: center;
   padding: 10px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .sc-header--team-name {
@@ -53,10 +61,6 @@ export default {
   border-radius: 5px;
 }
 
-.sc-header--team-name:hover {
-  background: #4882ed;
-}
-
 .sc-header--close-button {
   width: 40px;
   align-self: center;
@@ -65,10 +69,6 @@ export default {
   box-sizing: border-box;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.sc-header--close-button:hover {
-  background: #4882ed;
 }
 
 .sc-header--close-button img {

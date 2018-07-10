@@ -1,6 +1,6 @@
 <template>
   <div class="sc-message-list" ref="scrollList">
-    <Message v-for="(message, idx) in messages" :message="message" :chatImageUrl="chatImageUrl" :key="idx" />
+    <Message v-for="(message, idx) in messages" :message="message" :chatImageUrl="chatImageUrl" :mainColor="mainColor" :key="idx" />
   </div>
 </template>
 <script>
@@ -19,6 +19,10 @@ export default {
     chatImageUrl: {
       type: String,
       default: chatIcon
+    },
+    mainColor: {
+      type: String,
+      default: 'blue'
     }
   },
   methods: {
