@@ -1,7 +1,7 @@
 <template>
   <div class="sc-message" >
     <div class="sc-message--content" :class="{sent: message.author === 'me', received: message.author !== 'me'}">
-      <div class="sc-message--avatar" :style="{
+      <div class="sc-message--avatar" v-if="chatImageUrl" :style="{
         backgroundImage: `url(${chatImageUrl})`
       }"></div><TextMessage :style="style" v-if="message.type === 'text'" :data="message.data" />
       <EmojiMessage :style="style" v-else-if="message.type === 'emoji'" :data="message.data" />
