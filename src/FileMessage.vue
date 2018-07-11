@@ -1,14 +1,13 @@
 <template>
-  <div class='sc-message--file'>
-    <div class='sc-message--file-icon'>
-      <a :href="data.file.url || '#'" target='_blank'>
-        <img src="./assets/file.svg" alt='generic file icon' height="60" />
-      </a>
-    </div>
+  <div class='sc-message--text'>
+    <p v-if="data.sender" class="sc-message--sender"> {{data.sender}}</p>
     <div class='sc-message--file-name'>
-      <a :href="data.file.url ? data.file.url : '#'" target='_blank'>{{data.file.name || ''}}</a>
+      <img :src="data.file.content" class="sc-image"></img>
     </div>
+
     <div class="sc-message--file-text">{{data.text}}<p v-if="data.meta" class='sc-message--meta'>{{data.meta}}</p></div>
+    <p class='sc-message--time' v-if="data.time"> {{data.time}}</p></div>
+
   </div>
 </template>
 
@@ -39,6 +38,13 @@ export default {
   background-color: #4e8cff;
   word-wrap: break-word;
 }
+
+.sc-image {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+  
 
 .sc-message--file-icon {
   text-align: center;
