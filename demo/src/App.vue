@@ -12,6 +12,7 @@
       :showEmoji="true"
       placeholder="Manda un messaggio"
       mainColor="#45f442"
+      :isTyping="isTyping"
       :showFile="true" />
       <p class="text-center"><a href="#" @click.prevent="openChat()">Open the chat window</a></p>
     <TestArea :onMessage="handleMessageFromTextArea" />
@@ -38,7 +39,8 @@ export default {
       },
       messageList: messageHistory,
       newMessagesCount: 0,
-      isChatOpen: false
+      isChatOpen: false,
+      isTyping: true
     }
   },
   methods: {

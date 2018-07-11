@@ -5,6 +5,7 @@
       :imageUrl="agentProfile.imageUrl"
       :onClose="onClose"
       :mainColor="mainColor"
+      :isTyping="isTyping"
     />
     <MessageList
       :messages="messageList"
@@ -63,6 +64,10 @@ export default {
     mainColor: {
       type: String,
       default: "blue"
+    },
+    isTyping: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

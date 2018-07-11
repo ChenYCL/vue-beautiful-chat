@@ -17,6 +17,7 @@
       :showFile="showFile"
       :placeholder="placeholder"
       :mainColor="mainColor"
+      :isTyping="isTyping"
     />
   </div>
 </template>
@@ -68,6 +69,10 @@ export default {
     mainColor: {
       type: String,
       default: "blue"
+    },
+    isTyping: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

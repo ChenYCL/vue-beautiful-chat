@@ -1,7 +1,10 @@
 <template>
   <div class="sc-header" :style="style">
     <img class="sc-header--img" v-if="imageUrl" :src="imageUrl" alt="" />
-    <div class="sc-header--team-name"> {{teamName}} </div>
+    <div class="sc-header--team-name"> 
+      {{teamName}}
+      <span v-if="isTyping" class="typing"> sta scrivendo <span>.</span><span>.</span><span>.</span></span> 
+    </div>
     <div class="sc-header--close-button" @click="onClose">
       <img src="./assets/close-icon.png" alt="" />
     </div>
@@ -22,6 +25,10 @@ export default {
     },
     mainColor: {
       type: String,
+    },
+    isTyping: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -83,4 +90,32 @@ export default {
     border-radius: 0px;
   }
 }
+
+@keyframes blink {
+    0% {
+      opacity: .2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .2;
+    }
+}
+
+.typing span {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: .4s;
+}
+
 </style>
