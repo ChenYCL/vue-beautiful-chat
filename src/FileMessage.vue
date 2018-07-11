@@ -2,7 +2,7 @@
   <div class='sc-message--text'>
     <p v-if="data.sender" class="sc-message--sender"> {{data.sender}}</p>
     <div class='sc-message--file-name'>
-      <img :src="data.file.content" class="sc-image"></img>
+      <img :src="data.file.content" class="sc-image zoom"></img>
     </div>
 
     <div class="sc-message--file-text">{{data.text}}<p v-if="data.meta" class='sc-message--meta'>{{data.meta}}</p></div>
@@ -44,7 +44,11 @@ export default {
   min-width: 100%;
 }
 
-  
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}  
 
 .sc-message--file-icon {
   text-align: center;
