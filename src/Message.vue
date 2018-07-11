@@ -3,7 +3,8 @@
     <div class="sc-message--content" :class="{sent: message.author === 'me', received: message.author !== 'me'}">
       <div class="sc-message--avatar" v-if="chatImageUrl" :style="{
         backgroundImage: `url(${chatImageUrl})`
-      }"></div><TextMessage :style="style" v-if="message.type === 'text'" :data="message.data" />
+      }"></div>
+      <TextMessage :style="style" v-if="message.type === 'text'" :data="message.data" />
       <EmojiMessage :style="style" v-else-if="message.type === 'emoji'" :data="message.data" />
       <FileMessage  :style="style" v-else-if="message.type === 'file'" :data="message.data" />
     </div>
@@ -86,6 +87,16 @@ export default {
   margin-bottom: -10px;
   color: white;
   text-align: center;
+}
+
+.sc-message--time {
+  font-size: xx-small;
+  margin-bottom: -10px;
+  text-align: right;
+}
+
+.sc-message--sender {
+    font-weight: 500; 
 }
 
 @media (max-width: 450px) {
