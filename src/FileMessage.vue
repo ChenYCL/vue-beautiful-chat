@@ -4,10 +4,7 @@
     <div class='sc-message--file-name'>
       <img :src="data.file.content" class="sc-image zoom"></img>
     </div>
-
-    <div class="sc-message--file-text">{{data.text}}<p v-if="data.meta" class='sc-message--meta'>{{data.meta}}</p></div>
     <p class='sc-message--time' v-if="data.time"> {{data.time}}</p></div>
-
   </div>
 </template>
 
