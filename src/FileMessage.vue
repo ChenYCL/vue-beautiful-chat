@@ -2,7 +2,7 @@
   <div class='sc-message--text'>
     <p v-if="data.sender" class="sc-message--sender"> {{data.sender}}</p>
     <div class='sc-message--file-name'>
-      <img :src="data.src"></img>
+      <img :src="data.src" class="sc-image"></img>
     </div>
     <p class='sc-message--time' v-if="data.time"> {{data.time}}</p></div>
   </div>
