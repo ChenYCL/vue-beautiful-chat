@@ -152,12 +152,13 @@ export default {
 
 #publisher {
   position: absolute;
-  width: 360px;
-  height: 240px;
-  bottom: 10px;
-  left: 10px;
-  z-index: 100;
-  border: 3px solid white;
+  background : 'yellow'; 
+  border: 2px solid white;
+  width: 15vh;
+  height:15vh;
+  bottom: 1vh;
+  left: 1vh;
   border-radius: 3px;
+  z-index: 100;
 }
 </style>
