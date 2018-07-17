@@ -120,9 +120,11 @@ export default {
   text-align: left;
 }
 .sc-video {
+  position: relative;
+  width: 100%;
   height: 100%;
-  overflow-y: none;
-  background-size: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 450px) {
@@ -152,7 +154,6 @@ export default {
 
 #publisher {
   position: absolute;
-  background : 'yellow'; 
   border: 2px solid white;
   width: 15vh;
   height:15vh;
