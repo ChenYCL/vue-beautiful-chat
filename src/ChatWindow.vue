@@ -144,15 +144,17 @@ export default {
 #subscriber {
   width: 100%;
   height:100%;
-  background: 'red';
+  z-index: 10;
 }
 #publisher {
   position: absolute;
   background : 'yellow'; 
-  border: 1px solid black;
+  border: 2px solid white;
   width: 15vh;
   height:15vh;
-  bottom: 80px;
-  left: 2vh;
+  bottom: 1vh;
+  left: 1vh;
+  border-radius: 3px;
+  z-index: 100;
 }
 </style>
