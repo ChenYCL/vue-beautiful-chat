@@ -142,19 +142,22 @@ export default {
   }
 }
 #subscriber {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
-  height:100%;
+  height: 100%;
   z-index: 10;
 }
+
 #publisher {
   position: absolute;
-  background : 'yellow'; 
-  border: 2px solid white;
-  width: 15vh;
-  height:15vh;
-  bottom: 1vh;
-  left: 1vh;
-  border-radius: 3px;
+  width: 360px;
+  height: 240px;
+  bottom: 10px;
+  left: 10px;
   z-index: 100;
+  border: 3px solid white;
+  border-radius: 3px;
 }
 </style>
