@@ -12,7 +12,12 @@
       :imageUrl="agentProfile.imageUrl"
       :chatImageUrl="agentProfile.imageUrl"
       :mainColor="mainColor"
+      v-if="!video"
     />
+    <div id="video" class="sc-video" v-else> 
+        <div id="subscriber">Sub</div>
+        <div id="publisher">Pubb</div>
+    </div>
     <UserInput :showEmoji="showEmoji" :onSubmit="onUserInputSubmit" :showFile="showFile" :placeholder="placeholder"/>
   </div>
 </template>
@@ -68,6 +73,10 @@ export default {
     isTyping: {
       type: Boolean,
       default: false
+    },
+    video: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -110,6 +119,11 @@ export default {
 .sc-message--them {
   text-align: left;
 }
+.sc-video {
+  height: 100%;
+  overflow-y: none;
+  background-size: 100%;
+}
 
 @media (max-width: 450px) {
   .sc-chat-window {
@@ -126,5 +140,13 @@ export default {
   .sc-chat-window.closed {
     bottom: 0px;
   }
+}
+#subscriber {
+  width: 100%;
+  height:50%;
+}
+#publisher {
+  width: 100%;
+  height:50%;
 }
 </style>

@@ -18,6 +18,7 @@
       :placeholder="placeholder"
       :mainColor="mainColor"
       :isTyping="isTyping"
+      :video="video"
     />
   </div>
 </template>
@@ -71,6 +72,10 @@ export default {
       default: "blue"
     },
     isTyping: {
+      type: Boolean,
+      default: false
+    },
+    video: {
       type: Boolean,
       default: false
     }

@@ -13,7 +13,8 @@
       placeholder="Manda un messaggio"
       mainColor="#45f442"
       :isTyping="isTyping"
-      :showFile="true" />
+      :showFile="true"
+      :video="video" />
       <p class="text-center"><a href="#" @click.prevent="openChat()">Open the chat window</a></p>
     <TestArea :onMessage="handleMessageFromTextArea" />
     <Footer />
@@ -40,7 +41,8 @@ export default {
       messageList: messageHistory,
       newMessagesCount: 0,
       isChatOpen: false,
-      isTyping: true
+      isTyping: true,
+      video: true,
     }
   },
   methods: {

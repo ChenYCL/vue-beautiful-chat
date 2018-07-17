@@ -1,7 +1,7 @@
 <template>
-  <div class="sc-message-list" ref="scrollList">
-    <Message v-for="(message, idx) in messages" :message="message" :chatImageUrl="chatImageUrl" :mainColor="mainColor" :key="idx" />
-  </div>
+    <div class="sc-message-list" ref="scrollList" >
+      <Message v-for="(message, idx) in messages" :message="message" :chatImageUrl="chatImageUrl" :mainColor="mainColor" :key="idx"/>
+    </div>
 </template>
 <script>
 import Message from './Message.vue'
@@ -23,6 +23,10 @@ export default {
     mainColor: {
       type: String,
       default: 'blue'
+    },
+    video: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
