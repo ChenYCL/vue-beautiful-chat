@@ -155,8 +155,8 @@ export default {
 #publisher {
   position: absolute;
   border: 2px solid white;
-  width: 15vh;
-  height:15vh;
+  width: 150px;
+  height: 150px;
   bottom: 1vh;
   left: 1vh;
   border-radius: 3px;
