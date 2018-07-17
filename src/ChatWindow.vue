@@ -14,7 +14,7 @@
       :mainColor="mainColor"
       v-if="!video"
     />
-    <div id="video" class="sc-video" v-else> 
+    <div id="videos" class="sc-video" v-else> 
         <div id="subscriber"></div>
         <div id="publisher"></div>
     </div>
