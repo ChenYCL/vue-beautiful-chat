@@ -12,7 +12,6 @@
       :imageUrl="agentProfile.imageUrl"
       :chatImageUrl="agentProfile.imageUrl"
       :mainColor="mainColor"
-      v-show="!video"
     />
     <div id="video" class="sc-video" v-show="video"> 
         <div id="subscriber_video"></div>
