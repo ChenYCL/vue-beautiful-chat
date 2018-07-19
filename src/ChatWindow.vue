@@ -16,7 +16,6 @@
     />
     <div id="video" class="sc-video" v-else> 
         <div id="subscriber_video"></div>
-        <div id="publisher_video"></div>
     </div>
     <UserInput :showEmoji="showEmoji" :onSubmit="onUserInputSubmit" :showFile="showFile" :placeholder="placeholder"/>
   </div>
@@ -150,16 +149,5 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 10;
-}
-
-#publisher_video {
-  position: absolute;
-  border: 2px solid white;
-  width: 150px;
-  height: 150px;
-  bottom: 1vh;
-  left: 1vh;
-  border-radius: 3px;
-  z-index: 100;
 }
 </style>
