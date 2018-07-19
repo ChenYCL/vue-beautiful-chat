@@ -15,8 +15,8 @@
       v-if="!video"
     />
     <div id="video" class="sc-video" v-else> 
-        <div id="subscriber"></div>
-        <div id="publisher"></div>
+        <div id="subscriber_video"></div>
+        <div id="publisher_video"></div>
     </div>
     <UserInput :showEmoji="showEmoji" :onSubmit="onUserInputSubmit" :showFile="showFile" :placeholder="placeholder"/>
   </div>
@@ -153,13 +153,13 @@ export default {
 }
 
 #publisher {
-  position: relative;
-  border: 2px solid red;
+  position: absolute;
+  border: 2px solid white;
   width: 150px;
   height: 150px;
+  bottom: 1vh;
   left: 1vh;
   border-radius: 3px;
-  margin-bottom: 0;
   z-index: 100;
 }
 </style>
