@@ -153,13 +153,13 @@ export default {
 }
 
 #publisher {
-  position: absolute;
-  border: 2px solid white;
+  position: relative;
+  border: 2px solid red;
   width: 150px;
   height: 150px;
-  bottom: 1vh;
   left: 1vh;
   border-radius: 3px;
+  margin-bottom: 0;
   z-index: 100;
 }
 </style>
