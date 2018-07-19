@@ -143,7 +143,7 @@ export default {
     bottom: 0px;
   }
 }
-#subscriber {
+#subscriber_video {
   position: absolute;
   left: 0;
   top: 0;
@@ -152,7 +152,7 @@ export default {
   z-index: 10;
 }
 
-#publisher {
+#publisher_video {
   position: absolute;
   border: 2px solid white;
   width: 150px;
