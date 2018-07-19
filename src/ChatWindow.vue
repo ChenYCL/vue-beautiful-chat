@@ -155,8 +155,8 @@ export default {
 #publisher_video {
   position: absolute;
   border: 2px solid white;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   bottom: 1vh;
   left: 1vh;
   border-radius: 3px;
