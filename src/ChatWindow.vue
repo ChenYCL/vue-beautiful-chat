@@ -147,16 +147,16 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
-  width: 30%;
-  height: 30%;
+  width: 100%;
+  height: 100%;
   z-index: 10;
 }
 
 #publisher {
   position: absolute;
   border: 2px solid white;
-  width: 30%;
-  height: 30%;
+  width: 150px;
+  height: 150px;
   bottom: 1vh;
   left: 1vh;
   border-radius: 3px;
