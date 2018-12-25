@@ -1,20 +1,44 @@
 <template>
-  <div class='sc-message--text'>
-    <p v-if="data.sender" class="sc-message--sender"> {{data.sender}}</p>
-    <div class='sc-message--file-name'>
-      <img :src="data.src" class="sc-image"></img>
-    </div>
-    <p class='sc-message--time' v-if="data.time"> {{data.time}}</p></div>
+  <div class='sc-message' >
+    <!--<div class='sc-message&#45;&#45;file-icon'>-->
+      <!--<a :href="data.file.url || '#'" target='_blank'>-->
+        <!--<img src="./assets/file.svg" alt='generic file icon' height="60" />-->
+        <img :src="base64" alt='generic file icon' height="100%" width="100%"/>
+      <!--</a>-->
+    <!--</div>-->
+    <!--<div class='sc-message&#45;&#45;file-name' :style="messageColors">-->
+      <!--<a :href="data.file.url ? data.file.url : '#'" target='_blank'>{{data.file.name || ''}}</a>-->
+    <!--</div>-->
+    <!--<div class="sc-message&#45;&#45;file-text" :style="messageColors">{{data.text}}<p v-if="data.meta" class='sc-message&#45;&#45;meta' :style="messageColors">{{data.meta}}</p></div>-->
   </div>
 </template>
 
 <script>
 export default {
+  data(){
+    return {
+      base64:''
+    }
+  },
   props: {
     data: {
       type: Object,
       required: true
+    },
+    messageColors: {
+      type: Object,
+      required: true
     }
+  },
+  created(){
+    let that =this;
+    let reader = new FileReader();
+    reader.readAsDataURL(this.data.file);
+    reader.onloadend = function() {
+      that.base64 = reader.result; // base64
+      // console.log(that.base64)
+    };
+
   }
 }
 </script>
@@ -22,7 +46,6 @@ export default {
 <style scoped>
 .sc-message--file {
   border-radius: 6px;
-  background-color: #4e8cff;
   font-weight: 300;
   font-size: 14px;
   line-height: 1.4;
@@ -31,21 +54,8 @@ export default {
 }
 
 .sc-message--content.sent .sc-message--file {
-  color: white;
-  background-color: #4e8cff;
   word-wrap: break-word;
 }
-
-.sc-image {
-  max-width: 100%;
-  min-width: 100%;
-}
-
-.zoom:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5); 
-}  
 
 .sc-message--file-icon {
   text-align: center;
